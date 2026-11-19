@@ -1,0 +1,4 @@
+{
+  "_help": "Add new data lectures here as folder paths relative to this file, e.g. \"lectures/t7\". Lectures t1 to t6 are still the old JS files in topics/ and keep working. Other settings (title, intro, footer...) are optional; see AUTHORING.md.",
+  "lectures": []
+}
