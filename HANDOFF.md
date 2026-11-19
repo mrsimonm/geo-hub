@@ -47,7 +47,7 @@ Opening `index.html` straight from disk does not work, because the app fetches t
 | `tools/validate.js` | The validator. Run it after every change. |
 | `tools/pdf-to-text.swift` | macOS-only helper that extracts text from a slide PDF: `swift tools/pdf-to-text.swift in.pdf out.txt`. |
 | `sw.js`, `manifest.webmanifest`, `icon-*.png`, `.nojekyll` | The PWA / offline / GitHub Pages setup. |
-| `slides/` | The lecturer's slides (local only, see "Slides"). |
+| `slides/` | The lecturer's slides, one PDF per lecture, plus extracted text (see "Slides"). |
 | `geology-hub/` | An old duplicate of the project from before the repo existed. **Ignore it.** It is not tracked. |
 
 ## How a lecture is built
@@ -89,7 +89,7 @@ The seven lecture PDFs are in `slides/`, with the text of each in `slides/text/`
 | `6-earth-structure.pdf` | 6 Earth structure |
 | `7-structural-geology-tectonics.pdf` | 7 Structural geology and tectonics (no lecture built yet) |
 
-`slides/` is **git-ignored on purpose**: the slides are the lecturer's copyrighted material and this repo is public, so they stay on this computer and are not pushed. If you work from a fresh clone you will not have them; ask the owner for the folder. To publish them anyway, remove `slides/` from `.gitignore`, but think about making the repo private first (note: GitHub Pages on a private repo needs a paid plan).
+The slides are in the repo (the owner chose to publish them), so a fresh clone has them. They belong to the lecturer, so do not copy or reuse them anywhere else, and do not add new slide files without asking the owner. The app itself does not load anything from `slides/`.
 
 Tips for reading the slides:
 - Most slides are pictures. The extracted text in `slides/text/` is only the typed words, so a slide that shows a diagram may have almost no text. Open the PDF to see the diagram.
