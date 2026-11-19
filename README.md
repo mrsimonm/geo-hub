@@ -19,3 +19,5 @@ To try it locally (opening `index.html` straight from disk can't load the data f
 ```bash
 python3 -m http.server 8000
 ```
+
+For anyone (or any AI) continuing the work, start with [HANDOFF.md](HANDOFF.md).

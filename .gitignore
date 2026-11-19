@@ -1,0 +1,5 @@
+# Lecturer slides are copyrighted course material: keep them on this computer only.
+# See HANDOFF.md ("Slides") before changing this.
+slides/
+.DS_Store
+geology-hub/

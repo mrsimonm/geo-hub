@@ -19,3 +19,6 @@ New lectures are DATA, not code: a folder `courses/<course>/lectures/tN/` with `
 - Before editing a topic file, read an existing one (e.g. `topics/t1.js`) and copy its data format exactly. Do not change the format.
 - Geology facts must be accurate. If unsure, leave a `TODO: verify` comment instead of guessing.
 - When done, list the files you changed. Do not rename or delete files.
+
+## Handoff
+Start with `HANDOFF.md`: project state, file map, to-do list and where the lecture slides are (`slides/`, local only).
