@@ -111,7 +111,7 @@ GEO.xp=xp;GEO.toast=toast;GEO.confetti=confetti;
 function fx(node,cls){if(!node)return;node.classList.remove("pop","shake");void node.offsetWidth;node.classList.add(cls)}
 GEO.fx=fx;
 function modal(em,title,text,btns){
-  var m=el("modal"),b=el("mbox");
+  var m=el("modal"),b=el("modalbox");
   b.innerHTML='<div class="em">'+em+'</div><h2 style="margin:8px 0 6px">'+title+'</h2><p style="margin:0 auto">'+text+'</p><div class="row">'+btns.map(function(x,k){return '<button class="btn'+(k?' sec':'')+'" data-mb="'+k+'">'+x[0]+'</button>'}).join("")+'</div>';
   m.hidden=false;var f=$("[data-mb]",b);if(f)f.focus();
   b.onclick=function(e){var t=e.target.closest("[data-mb]");if(!t)return;m.hidden=true;var fn=btns[+t.getAttribute("data-mb")][1];if(fn)fn()};
