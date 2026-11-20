@@ -13,10 +13,18 @@ function fresh(){return {review:[],tp:{},best:{},xp:0,day:{d:"",xp:0},streak:{la
 var S=fresh();
 function isObj(x){return x&&typeof x==="object"&&!Array.isArray(x)}
 try{var raw=localStorage.getItem(KEY);if(raw){var p=JSON.parse(raw);if(isObj(p)){S.review=Array.isArray(p.review)?p.review:[];S.tp=isObj(p.tp)?p.tp:{};S.best=isObj(p.best)?p.best:{};S.xp=+p.xp||0;if(isObj(p.day))S.day={d:String(p.day.d||""),xp:+p.day.xp||0};if(isObj(p.streak))S.streak={last:String(p.streak.last||""),n:+p.streak.n||0};S.games=isObj(p.games)?p.games:{};S.full=!!p.full;S.mas=isObj(p.mas)?p.mas:{};S.last=typeof p.last==="string"?p.last:""}}}catch(e){}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function save(skipSync){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}if(!skipSync&&window.GEOSync)window.GEOSync.onSave(S)}
 function tp(id){if(!S.tp[id]||typeof S.tp[id]!=="object")S.tp[id]={};var x=S.tp[id];if(!x.done||typeof x.done!=="object")x.done={};if(!x.best||typeof x.best!=="object")x.best={};x.step=+x.step||0;if(!isObj(x.bites))x.bites={};return x}
 
 var GEO=window.GEO={topics:[],byId:{},ALL:{},$:$,$$:$$,shuffle:shuffle,esc:esc,el:el};
+GEO._getState=function(){return S};
+GEO._setState=function(next){
+  if(!isObj(next))return;
+  S=Object.assign(fresh(),next);
+  save(true);hud();badge();
+  if(!el("v-home").hidden)renderHome();
+  else if(CUR&&!el("v-start").hidden)progress();
+};
 var ALL=GEO.ALL,CUR=null;
 GEO.register=function(t){
   t.Q=t.Q||[];t.VOC=t.VOC||[];t.VCON=t.VCON||[];t.steps=t.steps||[];
@@ -672,10 +680,11 @@ function renderHome(){
   h+='<h2 style="margin-top:20px">Lectures</h2><div class="tiles">'+GEO.topics.map(topicTile).join("")+GEO.planned.map(function(p){return '<div class="tile planned"><span class="tn">Lecture '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'}).join("")+'</div>';
   h+='<h2 style="margin-top:20px">Whole course</h2><div class="grid" style="margin-top:10px"><button class="mcard" data-go="exam"><b>Final exam practice</b><small>Mixed questions from the lectures you pick, with a grade estimate</small></button><button class="mcard" data-go="review"><b>Review all</b><small>'+S.review.filter(function(id){return ALL[id]}).length+' wrong answers to clear</small></button><button class="mcard" data-go="dict"><b>Dictionary</b><small>All '+tv+' terms, searchable</small></button>'+(GEO.byId.t1&&GEO.course.testsCard?'<button class="mcard" data-go="t1"><b>How the course works</b><small>Tests, grading, exam dates</small></button>':'')+'</div>';
   if(GEO.course.testsCard)h+='<div class="card"><h2>How the weekly tests work</h2><ul><li>5 minutes at the <b>start</b> of each lecture, about 7 A/B/C/D questions.</li><li>Only on the <b>previous</b> lecture, mostly facts from the lecture. Everything you need is in this hub.</li><li>Extra material (marked <i>not tested</i> here) is never in the test.</li><li>8 tests, the 2 worst are deleted, no retakes. Together they are <b>40 %</b> of your grade, the final exam <b>60 %</b>.</li></ul></div>';
-  h+='<div class="card"><h2>Your data</h2><p style="font-size:.95rem">Progress and wrong answers are saved in this browser only.</p><button class="ghost" id="reset">Reset all my progress</button><span id="resetmsg" style="margin-left:10px;font-size:.9rem;color:var(--mute)"></span></div>';
+  h+='<div class="card"><h2>Your data</h2><div id="syncbox" style="margin-bottom:10px"></div><p style="font-size:.95rem">Progress and wrong answers are saved in this browser'+(window.GEOSync?' (and synced to Firebase when signed in)':' only')+'.</p><button class="ghost" id="reset">Reset all my progress</button><span id="resetmsg" style="margin-left:10px;font-size:.9rem;color:var(--mute)"></span></div>';
   el("v-home").innerHTML=h;
+  if(window.GEOSync)window.GEOSync.render();
   var armed=false;
-  el("reset").onclick=function(){if(!armed){armed=true;this.textContent="Tap again to really reset";el("resetmsg").textContent="This deletes progress and the review list.";return}S=fresh();save();hud();renderHome();el("resetmsg").textContent="Done. Progress reset."};
+  el("reset").onclick=function(){if(!armed){armed=true;this.textContent="Tap again to really reset";el("resetmsg").textContent="This deletes progress and the review list.";return}S=fresh();save(true);if(window.GEOSync)window.GEOSync.onReset(S);hud();renderHome();el("resetmsg").textContent="Done. Progress reset."};
   el("foot").innerHTML=GEO.course.footer;
 }
 el("v-home").addEventListener("click",function(e){
@@ -1072,6 +1081,7 @@ el("contbtn").onclick=function(){go(this.getAttribute("data-h"))};
 window.addEventListener("hashchange",function(){show(location.hash.slice(1))});
 GEO.boot=function(){
   GEO.topics.sort(function(a,b){return a.num-b.num});hud();
+  if(window.GEOSync)window.GEOSync.init();
   show(location.hash.slice(1)||"home");
 };
 })();
