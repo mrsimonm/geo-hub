@@ -1059,10 +1059,11 @@ function show(h){
     if(v==="review")review();if(v==="start")progress();if(v==="games")gamesInit();if(v==="mastery")masteryInit();
     S.last=t.id+(v==="start"?"":"-"+v);save();
     contBar(t,v);
+    if(window.GEOSlides)GEOSlides.update(t);
     return;
   }
   if(["exam","review","dict"].indexOf(h)<0)h="home";
-  CUR=null;document.body.setAttribute("data-topic","home");
+  CUR=null;document.body.setAttribute("data-topic","home");if(window.GEOSlides)GEOSlides.update(null);
   el("contbar").hidden=true;
   drawTabs(null,h);showView(h);window.scrollTo(0,0);
   if(h==="home")renderHome();
