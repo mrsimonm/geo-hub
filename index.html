@@ -7,6 +7,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#F2F4F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#10161A" media="(prefers-color-scheme: dark)">
+<script>try{var th=localStorage.getItem("geoHub.theme");if(th==="light"||th==="dark")document.documentElement.setAttribute("data-theme",th)}catch(e){}</script>
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,13 +27,21 @@
   color-scheme:light;
   --c1:#3550A0; --c2:#8E3B8A; --c3:#B4441E; --c4:#86650F; --c5:#4A3FB5; --c6:#0F766E;
 }
-@media (prefers-color-scheme: dark){:root{
+/* Dark colours apply when the device is dark (unless you chose Light) or when you chose Dark with the day/night button. */
+@media (prefers-color-scheme: dark){:root:not([data-theme=light]){
   --bg:#10161A; --card:#192228; --soft:#222D34; --ink:#E7EEF2; --mute:#A0B1BC; --line:#2E3C45;
   --acc:#8CC4DC; --acc-ink:#0D161B; --acc-soft:#1A3240;
   --teach:#F0B54D; --teach-soft:#33280F; --trap:#F28B82; --trap-soft:#3A1E1C;
   --ok:#5FD39A; --ok-soft:#173326; --no:#F28B82; --no-soft:#3A1E1C; --ana:#67CBE0; --ana-soft:#13303A;
   color-scheme:dark;
   --c1:#8FA8E8; --c2:#E39BDD; --c3:#F59A73; --c4:#E2C062; --c5:#9C93F2; --c6:#4FD1C5;}}
+:root[data-theme=dark]{
+  --bg:#10161A; --card:#192228; --soft:#222D34; --ink:#E7EEF2; --mute:#A0B1BC; --line:#2E3C45;
+  --acc:#8CC4DC; --acc-ink:#0D161B; --acc-soft:#1A3240;
+  --teach:#F0B54D; --teach-soft:#33280F; --trap:#F28B82; --trap-soft:#3A1E1C;
+  --ok:#5FD39A; --ok-soft:#173326; --no:#F28B82; --no-soft:#3A1E1C; --ana:#67CBE0; --ana-soft:#13303A;
+  color-scheme:dark;
+  --c1:#8FA8E8; --c2:#E39BDD; --c3:#F59A73; --c4:#E2C062; --c5:#9C93F2; --c6:#4FD1C5;}
 body[data-topic=t1]{--acc:#3550A0;--acc-soft:#E3E9F8}
 body[data-topic=t2]{--acc:#8E3B8A;--acc-soft:#F6E4F4}
 body[data-topic=t3]{--acc:#B4441E;--acc-soft:#FBE6DD}
@@ -40,12 +49,18 @@ body[data-topic=t4]{--acc:#86650F;--acc-soft:#F6EED6}
 body[data-topic=t5]{--acc:#4A3FB5;--acc-soft:#E6E3FA}
 body[data-topic=t6]{--acc:#0F766E;--acc-soft:#DDF3F0}
 @media (prefers-color-scheme: dark){
-body[data-topic=t1]{--acc:#8FA8E8;--acc-soft:#1E2742}
-body[data-topic=t2]{--acc:#E39BDD;--acc-soft:#36203A}
-body[data-topic=t3]{--acc:#F59A73;--acc-soft:#3A2018}
-body[data-topic=t4]{--acc:#E2C062;--acc-soft:#332A12}
-body[data-topic=t5]{--acc:#9C93F2;--acc-soft:#2B2747}
-body[data-topic=t6]{--acc:#4FD1C5;--acc-soft:#12302D}}
+:root:not([data-theme=light]) body[data-topic=t1]{--acc:#8FA8E8;--acc-soft:#1E2742}
+:root:not([data-theme=light]) body[data-topic=t2]{--acc:#E39BDD;--acc-soft:#36203A}
+:root:not([data-theme=light]) body[data-topic=t3]{--acc:#F59A73;--acc-soft:#3A2018}
+:root:not([data-theme=light]) body[data-topic=t4]{--acc:#E2C062;--acc-soft:#332A12}
+:root:not([data-theme=light]) body[data-topic=t5]{--acc:#9C93F2;--acc-soft:#2B2747}
+:root:not([data-theme=light]) body[data-topic=t6]{--acc:#4FD1C5;--acc-soft:#12302D}}
+:root[data-theme=dark] body[data-topic=t1]{--acc:#8FA8E8;--acc-soft:#1E2742}
+:root[data-theme=dark] body[data-topic=t2]{--acc:#E39BDD;--acc-soft:#36203A}
+:root[data-theme=dark] body[data-topic=t3]{--acc:#F59A73;--acc-soft:#3A2018}
+:root[data-theme=dark] body[data-topic=t4]{--acc:#E2C062;--acc-soft:#332A12}
+:root[data-theme=dark] body[data-topic=t5]{--acc:#9C93F2;--acc-soft:#2B2747}
+:root[data-theme=dark] body[data-topic=t6]{--acc:#4FD1C5;--acc-soft:#12302D}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--font-b)}
 h1,h2,h3{font-family:var(--font-d);line-height:1.2;text-wrap:balance;margin:0}
@@ -317,9 +332,12 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
   --k-eye:#2A211E;--k-pink:#F59FB4;--k-wood:#C58F5B;--k-wood2:#94643A;--k-water:#8FD3EC;--k-fish:#FF9A4D;--k-yarn:#E8679A;--k-rug:#EFAFC0;--k-rug2:#FBD3DD;--k-bed:#6F9FDB;--k-bed2:#A6C6EF;
   --k-leaf:#5DB377;--k-leaf2:#3E9159;--k-pot:#E08A5E;--k-potd:#C46F45;--k-gold:#F7C744;--k-goldd:#C9962A;--k-cap:#2E3A4B;--k-capd:#1C2531;--k-bow:#E8618A;--k-bowd:#B83E64;
   --k-or:#F5A95F;--k-orl:#FFE4C2;--k-ord:#C8763A;--k-gr:#A9B4BE;--k-grl:#E8EDF1;--k-grd:#6C7987;--k-bk:#474C56;--k-bkl:#80878F;--k-bkd:#25292F;--k-wh:#FCF9F3;--k-whl:#FFFFFF;--k-whd:#BDB3A2}
-@media (prefers-color-scheme: dark){:root{--k-wall1:#2F3350;--k-wall2:#262941;--k-floor:#5E4838;--k-floor2:#4E3B2E;--k-base:#3F3026;--k-sky1:#1B2650;--k-sky2:#3A4C86;--k-sun:#F6EBB8;--k-cloud:#7D8BB5;--k-frame:#B9B5C9;
+@media (prefers-color-scheme: dark){:root:not([data-theme=light]){--k-wall1:#2F3350;--k-wall2:#262941;--k-floor:#5E4838;--k-floor2:#4E3B2E;--k-base:#3F3026;--k-sky1:#1B2650;--k-sky2:#3A4C86;--k-sun:#F6EBB8;--k-cloud:#7D8BB5;--k-frame:#B9B5C9;
   --k-wall3:#1F2236;--k-curtain:#3B7C73;--k-curtain2:#2C6159;--k-hill:#2E5443;--k-hill2:#223F33;--k-star:#FFF4C2;--k-dust:transparent;
   --k-rug:#7A4C5C;--k-rug2:#9A6B7B;--k-bed:#41659A;--k-bed2:#5B80B5;--k-wood:#9C6E45;--k-wood2:#6E4B2D;--k-cap:#C9D6E8;--k-capd:#8FA0B8;--k-bk:#545A64;--k-bkl:#8A919B;--k-bkd:#1E2126}}
+:root[data-theme=dark]{--k-wall1:#2F3350;--k-wall2:#262941;--k-floor:#5E4838;--k-floor2:#4E3B2E;--k-base:#3F3026;--k-sky1:#1B2650;--k-sky2:#3A4C86;--k-sun:#F6EBB8;--k-cloud:#7D8BB5;--k-frame:#B9B5C9;
+  --k-wall3:#1F2236;--k-curtain:#3B7C73;--k-curtain2:#2C6159;--k-hill:#2E5443;--k-hill2:#223F33;--k-star:#FFF4C2;--k-dust:transparent;
+  --k-rug:#7A4C5C;--k-rug2:#9A6B7B;--k-bed:#41659A;--k-bed2:#5B80B5;--k-wood:#9C6E45;--k-wood2:#6E4B2D;--k-cap:#C9D6E8;--k-capd:#8FA0B8;--k-bk:#545A64;--k-bkl:#8A919B;--k-bkd:#1E2126}
 .hudchip[hidden]{display:none}
 /* pixel animation: two frames that swap, no smooth tweening */
 .pxcat .f2{visibility:hidden}
@@ -390,7 +408,7 @@ body.catopen{overflow:hidden}
 </head>
 <body data-topic="home">
 <header class="top"><div class="top-in">
-  <div class="brand"><button class="homebtn" id="homebtn" hidden>◂ All topics</button><b id="brandT">Geology Hub</b><span id="brandS">ZOX101E · every lecture in one place</span><span class="hud"><button class="hudchip" id="catbtn" title="Your Study Cat" hidden>🐱 0</button><span class="hudchip" id="hudStreak" title="Days in a row you studied">🔥 0</span><span class="hudchip" id="hudXP" title="Your XP and level">⚡ 0 <span class="lv"><i></i></span></span><button class="hudchip" id="focusbtn" title="Focus sprint timer">⏱ Focus</button></span></div>
+  <div class="brand"><button class="homebtn" id="homebtn" hidden>◂ All topics</button><b id="brandT">Geology Hub</b><span id="brandS">ZOX101E · every lecture in one place</span><span class="hud"><button class="hudchip" id="catbtn" title="Your Study Cat" hidden>🐱 0</button><button class="hudchip" id="themebtn" type="button" aria-label="Switch between day and night mode" title="Switch between day and night mode">🌙</button><span class="hudchip" id="hudStreak" title="Days in a row you studied">🔥 0</span><span class="hudchip" id="hudXP" title="Your XP and level">⚡ 0 <span class="lv"><i></i></span></span><button class="hudchip" id="focusbtn" title="Focus sprint timer">⏱ Focus</button></span></div>
   <div class="focuspanel" id="focuspanel" hidden><b>Focus sprint</b><p style="font-size:.88rem;color:var(--mute);margin:4px 0 8px">Pick a short sprint. Phone away, one tab only. You get a break and bonus XP at the end.</p><div class="row"><button class="btn sec" data-min="5">5</button><button class="btn" data-min="10">10</button><button class="btn sec" data-min="15">15</button><button class="btn sec" data-min="25">25</button></div><p style="font-size:.8rem;color:var(--mute);margin:6px 0 0">minutes</p><button class="ghost" id="focusstop" hidden style="margin-top:8px;width:100%">Stop the sprint</button></div>
   <nav class="tabs" id="tabs" role="tablist" aria-label="Sections"></nav>
 </div></header>
