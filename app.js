@@ -1020,6 +1020,28 @@ function fsTick(){var l=Math.max(0,Math.round((FS.end-Date.now())/1000)),b=el("f
   if(l<=0){var brk=FS.brk;fsStop();
     if(!brk){xp(25,"focus sprint");confetti();modal("🎉","Sprint done!","Great focus. Take a short break now: stand up, stretch, drink some water. Then come back for another round.",[["☕ 3-minute break",function(){fsStart(3,true)}],["Keep going: 10 more",function(){fsStart(10)}],["Close",null]])}
     else modal("💪","Break's over","Ready for another short sprint?",[["⏱ 10-minute sprint",function(){fsStart(10)}],["Not now",null]])}}
+/* day / night button: your choice is saved; until you choose, the device setting decides */
+(function(){
+  var b=el("themebtn"),root=document.documentElement,mq=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)");
+  if(!b)return;
+  function isDark(){var t=root.getAttribute("data-theme");return t?t==="dark":!!(mq&&mq.matches)}
+  function paint(){
+    var d=isDark();b.textContent=d?"☀️":"🌙";b.title=d?"Switch to light mode":"Switch to dark mode";b.setAttribute("aria-label",b.title);
+    if(root.getAttribute("data-theme")){ /* a chosen theme also colours the phone's browser bar */
+      var m=document.querySelector("meta[name=theme-color][data-manual]");
+      if(!m){m=document.createElement("meta");m.name="theme-color";m.setAttribute("data-manual","1");document.head.insertBefore(m,document.head.querySelector("meta[name=theme-color]"))}
+      m.content=d?"#10161A":"#F2F4F5";
+    }
+  }
+  b.onclick=function(e){
+    e.stopPropagation();var next=isDark()?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("geoHub.theme",next)}catch(x){}
+    paint();
+  };
+  if(mq&&mq.addEventListener)mq.addEventListener("change",function(){if(!root.getAttribute("data-theme"))paint()});
+  paint();
+})();
 el("focusbtn").onclick=function(e){e.stopPropagation();el("focuspanel").hidden=!el("focuspanel").hidden};
 el("focuspanel").onclick=function(e){e.stopPropagation();var b=e.target.closest("[data-min]");if(b)fsStart(+b.getAttribute("data-min"))};
 el("focusstop").onclick=function(e){e.stopPropagation();fsStop();el("focuspanel").hidden=true};
