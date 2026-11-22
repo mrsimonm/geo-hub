@@ -82,7 +82,15 @@
     { "id": "t7-hotspot", "q": "How do Hawaii's volcanoes form, according to the teacher?", "answer": "From a mantle plume in the middle of a plate (a hotspot)", "wrong": ["At a mid-ocean ridge", "At a subduction zone", "At a transform boundary"], "e": "Hotspots are not at plate boundaries: magma rises from deep in the mantle." },
     { "id": "t7-wilson", "q": "What does the Wilson cycle describe?", "answer": "The repeated opening and closing of ocean basins", "wrong": ["The rock cycle of minerals", "The daily tides", "The movement of the magnetic poles"], "e": "The Wilson cycle is the life cycle of plate tectonics.", "fol": true },
     { "id": "t7-wilsonorder", "q": "Which order matches the Wilson cycle?", "answer": "Rift → young ocean → ocean basin → subduction → continental collision", "wrong": ["Collision → rift → subduction → ocean basin → young ocean", "Ocean basin → rift → collision → young ocean → subduction", "Subduction → rift → collision → ocean basin → young ocean"], "e": "An ocean opens (rift, young ocean, ocean basin), then closes (subduction, collision); erosion and a new rift restart it." },
-    { "id": "t7-poster", "q": "What will you do in the next practical?", "answer": "Make a poster on a chosen region's structures and tectonics, using AI, in teams of two or three", "wrong": ["Write a 90-minute test", "Identify the 22 minerals", "Map the Barrandov cliff"], "e": "Bring scissors and markers.", "x": true }
+    { "id": "t7-poster", "q": "What will you do in the next practical?", "answer": "Make a poster on a chosen region's structures and tectonics, using AI, in teams of two or three", "wrong": ["Write a 90-minute test", "Identify the 22 minerals", "Map the Barrandov cliff"], "e": "Bring scissors and markers.", "x": true },
+    { "id": "t7-act-comp", "q": "Compression at shallow depth, where rocks are brittle. Which structure forms?", "answer": "Reverse fault", "wrong": ["Normal fault", "Strike-slip fault", "Folds"], "e": "Compression pushes the hanging wall up: a reverse (or thrust) fault. Slide 21 activity." },
+    { "id": "t7-act-tens", "q": "Tension at shallow depth, where rocks are brittle. Which structure forms?", "answer": "Normal fault", "wrong": ["Reverse fault", "Thrust fault", "Folds"], "e": "Tension pulls the blocks apart and the hanging wall drops down: a normal fault. Slide 21 activity." },
+    { "id": "t7-act-deep", "q": "Compression at greater depth, where rocks deform by ductile flow. What forms?", "answer": "Folds", "wrong": ["Joints", "Normal faults", "Veins"], "e": "Deep and hot, the rock bends instead of breaking: folds. Slide 21 activity." },
+    { "id": "t7-act-shear", "q": "Shear stress acting on a large region at depth (ductile) produces a...", "answer": "Shear zone", "wrong": ["Rift valley", "Vein", "Joint set"], "e": "Teacher said: shear over large regions makes a shear zone; at the surface the same stress gives strike-slip faults." },
+    { "id": "t7-eqcause", "q": "Why does an earthquake happen?", "answer": "Stored elastic strain is released in a sudden rupture", "wrong": ["Magma cools and contracts", "The plate slowly bends by ductile flow", "Groundwater dissolves the rock"], "e": "Teacher said: plates build up stress as elastic strain, then it is released by a sudden movement along the plate." },
+    { "id": "t7-bounds-why", "q": "According to the teacher, why are plate boundaries so interesting for geologists?", "answer": "Most rocks, many ores, geohazards and volcanism are found there", "wrong": ["They are the only places with sedimentary rocks", "Plates are not rigid there, so nothing is measured", "They are always in the middle of a plate"], "e": "Plate boundaries are sites of deformation, earthquakes and magmatism (slide 29); the teacher added rocks, ores and geohazards.", "x": true },
+    { "id": "t7-slabcore", "q": "How deep can a subducted plate sink, according to the teacher?", "answer": "In some cases down to the core", "wrong": ["Only to the base of the crust", "Never below 15 km", "It always melts at the trench"], "e": "Geologists follow sunken plates inside the Earth to read the history of subduction.", "x": true },
+    { "id": "t7-batholith", "q": "In a continental arc like the Andes, the intermediate magma forms...", "answer": "Large plutons (batholiths)", "wrong": ["Mid-ocean ridges", "Gneissic banding", "Rift lakes"], "e": "Subduction factory: large plutons and volcanoes of intermediate composition (slide 35); the teacher called the big plutons batholiths.", "x": true }
   ],
 
   "vocab": [
@@ -216,7 +224,12 @@
     [11, "Transform boundaries have no significant {magmatism|earthquakes|faults|movement}."],
     [11, "The {San Andreas|Eger|Mid-Atlantic|Andes} Fault is a transform boundary."],
     [12, "The Wilson cycle describes the repeated opening and closing of {ocean basins|volcanoes|caves|rivers}."],
-    [12, "The Wilson cycle starts with a continental {rift|collision|arc|subduction}."]
+    [12, "The Wilson cycle starts with a continental {rift|collision|arc|subduction}."],
+    [6, "Under compression at shallow depth, rocks break along a {reverse fault|normal fault|joint|vein}."],
+    [6, "Under tension at shallow depth, rocks break along a {normal fault|reverse fault|thrust fault|fold}."],
+    [6, "Under shear at shallow depth, rocks break along a {strike-slip fault|normal fault|reverse fault|fold}."],
+    [6, "Under compression at greater depth, rocks deform by ductile flow into {folds|joints|veins|faults}."],
+    [10, "An earthquake releases stored {elastic|ductile|plastic|thermal} strain in a sudden rupture."]
   ],
 
   "cards": {

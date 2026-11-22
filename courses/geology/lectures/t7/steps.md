@@ -229,6 +229,23 @@ The two depth ranges overlap: brittle is **0–15 km**, ductile is **deeper than
 When shear stress acts over large regions, the result is a **shear zone**. Brittle and ductile deformation often occur together in the same place. {rec}
 :::
 
+### Activity: which deformation is which? (slide 21)
+
+The same three stresses give different structures near the surface (brittle) and deeper down (ductile):
+
+| Stress | Shallow: brittle fracture | Deeper: ductile flow |
+|---|---|---|
+| **Compression** | **Reverse fault** | **Folds** |
+| **Tension** | **Normal fault** | Stretching (thinning) of the layers |
+| **Shear** | **Strike-slip fault** | **Shear zone** |
+
+:::teach Teacher said
+The slide leaves the boxes empty. The teacher filled in the two ductile answers for tension and shear: tension at depth simply **stretches** the layers, and shear over a large region makes a **shear zone**. Brittle and ductile structures often occur together in the same place. {rec}
+:::
+
+{{q:t7-act-comp}}
+{{q:t7-act-tens}}
+{{q:t7-act-deep}}
 {{q:t7-anti}}
 {{q:t7-syn}}
 {{q:t7-foli}}
@@ -287,6 +304,10 @@ Plate boundaries are the sites of **deformation, earthquakes and magmatism**. Ea
 | **Convergent** | Converge, collide | Crustal **compression** |
 | **Transform** | Slide past each other | **Horizontal shear** |
 
+:::teach Teacher said
+Plate boundaries are the most interesting places for geologists: **most rocks form there**, and so do many **ores**. They also shape landscapes (geomorphology) and are where **geohazards** and **volcanism** happen. {rec}
+:::
+
 {{q:t7-speed}}
 {{q:t7-gps}}
 {{q:t7-convect}}
@@ -332,6 +353,10 @@ At a **convergent** boundary two plates move toward each other. There are three 
 **Subduction** is when one plate is dragged down beneath the other, into the mantle.
 
 :::teach Teacher said
+A subducted plate can sink very deep, in some cases **down to the core**. Geologists can follow these sunken plates inside the Earth and read the history of subduction millions of years back. {rec}
+:::
+
+:::teach Teacher said
 The **oceanic** plate always subducts beneath the **continental** plate, because oceanic plate is denser (heavier) and continental plate is more buoyant. There are rare exceptions. {rec}
 :::
 
@@ -340,6 +365,7 @@ The **oceanic** plate always subducts beneath the **continental** plate, because
 - Dominantly **andesitic volcanism**
 - **Dioritic to granodioritic plutonism** (intermediate magma)
 - Examples from class: the islands from southern Japan to Taiwan (island arc), the **Andes** (continental arc). {rec}
+- In continental arcs the intermediate magma forms **large plutons (batholiths)**. {rec}
 
 ### The subduction factory
 
@@ -348,6 +374,10 @@ The **oceanic** plate always subducts beneath the **continental** plate, because
    - **High P/T** (**blueschist–eclogite**) in the subducting plate
    - **Medium P/T** (**greenschist–amphibolite–granulite**) in the upper plate
 3. **Earthquakes**: they follow the subducting plate
+
+:::teach Teacher said
+Why earthquakes happen: the plates build up stress as **elastic strain**. When the rock can no longer hold it, the strain is released in a **sudden rupture**, a sudden movement along the plate. {rec}
+:::
 
 :::teach Teacher said
 The subducting oceanic plate is mostly basalt and gabbro. That is why blueschist and eclogite are typical metabasaltic rocks. In Japan you can trace the sinking plate by plotting earthquake depths: shallow near the trench, deeper and deeper away from it. {rec}
@@ -370,6 +400,7 @@ The teacher said "epicentres" for the points inside the Earth. Strictly, the poi
 {{q:t7-andes}}
 {{q:t7-paired}}
 {{q:t7-quakes}}
+{{q:t7-eqcause}}
 {{q:t7-collision}}
 
 ## Transform boundaries and hotspots | 6 min
@@ -382,7 +413,7 @@ At a **transform** boundary, continental or oceanic plates **slide past each oth
 - **Earthquakes!**
 
 :::teach Teacher said
-Examples: the **San Andreas Fault** in California, and the big earthquake in **Turkey** a few years ago. {rec}
+Examples: the **San Andreas Fault** in California, and the big earthquake in **Turkey** a few years ago. Along the San Andreas Fault a **small mountain range** formed, from a little thrusting and folding along the fault. {rec}
 :::
 
 :::teach Teacher said
@@ -417,8 +448,12 @@ How magma becomes more felsic: assimilation of surrounding rock, magma mixing, a
 :::
 
 :::teach Practical
-Next practical: in teams of **two or three**, make a **poster** on a region you choose, describing its geological structures and tectonics with the help of AI. Bring **scissors and markers**. {rec}
+Next practical: in teams of **two or three**, make a **poster** on a region you choose, describing its geological structures and tectonics with the help of AI. The goal is to connect **structural geology** with **tectonics** in one real region. The teacher brings large paper and printed pictures and will give tips on using AI. Bring **scissors and markers**. {rec}
 :::
+
+### Recommended videos (slide 42)
+
+<ul><li><a href="https://www.youtube.com/watch?v=I_q3sAcuzIY" target="_blank" rel="noopener">Wilson cycle</a> (the one shown in class)</li><li><a href="https://www.youtube.com/watch?v=g_iEWvtKcuQ&t=4s" target="_blank" rel="noopener">Continental drift and paleogeography</a>: how the continents moved (more in later lectures)</li><li><a href="https://www.youtube.com/watch?v=1gMU7zfDqfg" target="_blank" rel="noopener">Landscapes, structural geology and tectonics</a></li></ul>
 
 {{q:t7-wilson}}
 {{q:t7-wilsonorder}}
