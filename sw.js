@@ -1,10 +1,10 @@
 // Geology Hub offline support: the app and every lecture file keep working without a connection.
 // Bump V when you change this file. Content files (json, md, js, html) are fetched fresh when online,
 // so new lectures show up without touching the service worker; the saved copy is used offline.
-const V = "geo-hub-v4";
+const V = "geo-hub-v5";
 const SHELL = [
   "./", "./index.html", "./app.js", "./lib/lecture-lib.js",
-  "./lib/firebase-config.js", "./lib/firebase-sync.js", "./lib/cat.js",
+  "./lib/firebase-config.js", "./lib/firebase-sync.js", "./lib/cat.js", "./lib/slides.js",
   "./topics/t1.js", "./topics/t2.js", "./topics/t3.js", "./topics/t4.js", "./topics/t5.js", "./topics/t6.js",
   "./courses/geology/course.json", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"
 ];
