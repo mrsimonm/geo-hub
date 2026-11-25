@@ -38,6 +38,8 @@ Relative dating is like knowing that grandma is older than mum, who is older tha
 
 The photo on slide 7 is the **Badlands, USA**: the same flat layers continue on both sides of each valley. Erosion cut the valleys later, but the layers were once continuous (lateral continuity).
 
+The photo on slide 8 shows light and dark **dikes** cutting straight through the rock: by cross-cutting, each dike is younger than the rock it cuts.
+
 :::trap Exam trap
 Superposition works for layers that are still the right way up. If a layer is **tilted or folded**, original horizontality tells you it was deformed **after** it was deposited, and cross-cutting tells you the deformation is younger than the layer.
 :::
@@ -55,7 +57,7 @@ Slide 9 is a cross-section to put in order. Use two principles: **superposition*
 
 What the diagram shows:
 
-- Three sedimentary layers: **A** (sandstone, top), **B** (limestone, middle), **C** (bottom).
+- Three sedimentary layers: **A** (top), **B** (middle), **C** (bottom).
 - **D**: an igneous dike that cuts through C, B and A.
 - **E**: a fault that cuts all the layers **and offsets the dike D**.
 
@@ -98,11 +100,22 @@ On the right of the fault, layer B sits lower than on the left. The right block 
 Alpha decay loses 2 protons and 2 neutrons, so uranium (92) becomes thorium (90) and the mass drops by 4 (238 → 234). In beta decay a neutron turns into a proton, so carbon (6) becomes nitrogen (7) and the mass stays 14.
 :::
 
+### Penetrating power (figure on slide 12)
+
+| Radiation | Stopped by |
+|---|---|
+| **Alpha** | A sheet of **paper** |
+| **Beta** | **Aluminium** |
+| **Gamma** | Only weakened by thick **concrete** (or lead) |
+
+The figure also notes that beta decay can release a **positron** (β⁺) instead of an electron.
+
 {{q:t8-absdef}}
 {{q:t8-becq}}
 {{q:t8-alpha}}
 {{q:t8-beta}}
 {{q:t8-gamma}}
+{{q:t8-paper}}
 
 ## Parent, daughter, half-life | 10 min
 
@@ -158,7 +171,19 @@ So by measuring the ratio of parent to daughter in a mineral, you can count how 
 - *"The present is the key to the past."* The processes we see today (erosion, deposition, volcanism) worked the same way in the past.
 - *"No vestige of a beginning, no prospect of an end."* The Earth is unimaginably old.
 
-At **Siccar Point** steep old layers are cut off and covered by younger flat layers. To explain that, Hutton needed a very long time: deposition, folding, uplift, erosion and new deposition.
+### Siccar Point (slide 17)
+
+| Part | What the slide says |
+|---|---|
+| **Below** the red line | **Vertical** sedimentary rocks with **marine fossils**, deposited in a **deep ocean** about **425 Ma** (Silurian) |
+| **The red line** | A cross-cutting **unconformity**: a **hiatus**, a period of **non-deposition or active erosion** |
+| **Above** the red line | **Tilted** sedimentary rocks deposited in a **desert** about **345 Ma** (Devonian) |
+
+To explain this, Hutton needed a very long time: the ocean layers were deposited, turned vertical, uplifted and eroded flat, and only then were the desert layers laid on top.
+
+:::skip Don't memorise
+The exact wording "The present is the key to the past" was written later (by Archibald Geikie) to sum up Hutton's idea. The slide credits Hutton, so answer **Hutton** in the test.
+:::
 
 ### Charles Darwin
 
@@ -170,6 +195,7 @@ Slide 16: play the **Geological time – events** quiz and the **Geological time
 :::
 
 {{q:t8-hutton}}
+{{q:t8-unconf}}
 {{q:t8-darwin}}
 
 ## Dividing geological time | 10 min
@@ -205,10 +231,19 @@ Time itself is split into **geochronological** units. The **rocks** that formed 
 Paleozoic and Mesozoic periods in order: **C**amels **O**ften **S**it **D**own **C**arefully, **P**erhaps **T**heir **J**oints **C**reak (Cambrian, Ordovician, Silurian, Devonian, Carboniferous, Permian, Triassic, Jurassic, Cretaceous).
 :::
 
+The chart also splits the **Carboniferous** into the **Mississippian** (older) and **Pennsylvanian** (younger), and lists the **epochs** of the Cenozoic:
+
+| Period | Epochs (oldest → youngest) |
+|---|---|
+| Paleogene | Paleocene, Eocene, Oligocene |
+| Neogene | Miocene, Pliocene |
+| Quaternary | Pleistocene, Holocene |
+
 The official version is the **International Stratigraphic Chart**: stratigraphy.org/chart.
 
 {{q:t8-units}}
 {{q:t8-system}}
+{{q:t8-holo}}
 
 ## Stratigraphy and the key numbers | 8 min
 
@@ -295,6 +330,8 @@ Slide 26 is a world map of **Archean cratons**: small cores of very old crust in
 - First **eukaryotic cells**
 - First **multicellular life** (late-Proterozoic fauna, slide 29)
 
+The map on slide 28 shows how continents grew outwards: small **Archean cratons** at the core, wide **Proterozoic shields** around them, and younger **Phanerozoic orogens** (mountain belts) at the edges. Named shields include the North American, Siberian, African, Indian, South American, Australian and East Antarctic shields.
+
 :::trap Exam trap
 Keep the "firsts" apart. **Archean**: first continental crust, first microbes (stromatolites), first photosynthesis. **Proterozoic**: first eukaryotes, first multicellular life, big oxygen rise.
 :::
@@ -310,6 +347,7 @@ Keep the "firsts" apart. **Archean**: first continental crust, first microbes (s
 {{q:t8-strom}}
 {{q:t8-prot}}
 {{q:t8-eons}}
+{{q:t8-growth}}
 
 ## Continents: cratons, shields and more | 8 min
 
