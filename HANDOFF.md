@@ -69,7 +69,7 @@ Mastery fact format: `[stepNumber, "Sentence with {right|wrong|wrong|wrong}."]`.
 
 **Not done / ideas, roughly in order of value**
 1. **Lecture 7: Structural geology and tectonics.** Slides are in `slides/7-structural-geology-tectonics.pdf` (text in `slides/text/`). Make it as a data lecture: copy `templates/lecture/` to `courses/geology/lectures/t7/`, fill it in, add it to `courses/geology/course.json`, run the validator. The home page currently shows a grey "Lecture 7 / Added after it happens" placeholder tile that should go away once the lecture exists (look for it in `app.js`, search "Later in the semester").
-2. **Lectures 8 to 11** (geotectonic settings, history of the Earth I and II, economic geology I and II) when the slides arrive.
+2. **Lecture 8 (Historical and regional geology I) is done** as a data lecture in `courses/geology/lectures/t8/`, built from the slides only (no recording existed on 25 Nov). If a recording turns up, add "Teacher said" lines marked `{rec}`. **Lectures 9+** (historical and regional geology II, economic geology I and II, environmental geology) when the slides arrive. Only the newest lecture should have a `next` field: it drives the "Next test" banner.
 3. **Make the special widgets data-driven.** Lectures 1 to 6 contain custom code attached to steps: drills (all six), sorters (2 to 6), order games (4 and 6), SVG diagrams (3, 5, 6) and a grade calculator (lecture 1). These cannot be expressed as data yet, which is why lectures 1 to 6 are not migrated. Sorters, drills and order games are the common ones; making them data types would let all six migrate.
 4. Check that the Claude artifact copy ("Geology Hub 2") can fetch the `.json` and `.md` files when hosted on claude.ai. Untested.
 5. Try the install on a real phone. Untested.
@@ -77,7 +77,7 @@ Mastery fact format: `[stepNumber, "Sentence with {right|wrong|wrong|wrong}."]`.
 
 ## Slides
 
-The seven lecture PDFs are in `slides/`, with the text of each in `slides/text/`. Duplicate downloads were removed: there is exactly one file per lecture.
+The lecture PDFs are in `slides/`, with the text of each in `slides/text/`. Duplicate downloads were removed: there is exactly one file per lecture.
 
 | File | Lecture |
 |---|---|
@@ -87,7 +87,8 @@ The seven lecture PDFs are in `slides/`, with the text of each in `slides/text/`
 | `4-sedimentary-rocks.pdf` | 4 Sedimentary rocks and processes |
 | `5-metamorphic-rocks.pdf` | 5 Metamorphic rocks and processes |
 | `6-earth-structure.pdf` | 6 Earth structure |
-| `7-structural-geology-tectonics.pdf` | 7 Structural geology and tectonics (no lecture built yet) |
+| `7-structural-geology-tectonics.pdf` | 7 Structural geology and tectonics |
+| `8-historical-regional-geology-1.pdf` | 8 Historical and regional geology I |
 
 The slides are in the repo (the owner chose to publish them), so a fresh clone has them. They belong to the lecturer, so do not copy or reuse them anywhere else, and do not add new slide files without asking the owner. The app itself does not load anything from `slides/`.
 
